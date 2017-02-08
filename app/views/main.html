@@ -1,23 +1,29 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+<div ng-app class="jumbotron" ng-controller="MainCtrl">
+  <h1>Search results for</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+   <div ng-init="q='radish'">
+        <p>
+          <label for="q">Ingredient:
+            <input type="text" name="q" ng-model="q">
+          </label>
+        </p>
+        <p>
+          <button class="btn btn-lg btn-primary" ng-click="refreshSearch()">Get Recipes</button>
+        </p>
+      <dl>
+        <dt>Recipe</dt>
+        <dd>{{search.recipe[0].label}}</dd>
+        <dd>{{search.recipe[0].image}}</dd>
+        <dt>Source</dt>
+        <dd>{{search.recipe.source}}</dd>
+        <dd>{{search.recipe.url}}</dd>
+        <dt>Ingredients</dt>
+        <dd>{{search.ingredientLines}}</dd>
+        <dt>Calories</dt>
+        <dd>{{search.calories}}</dd>
+        <dt>Fat</dt>
+        <dd>{{search.FAT.quantity}} {{search.FAT.unit}}</dd>
+      </dl>
+    </div>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
 </div>
