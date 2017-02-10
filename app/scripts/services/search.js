@@ -13,7 +13,7 @@ angular.module('workspaceApp')
     // ...
 
     // Public API here
-   return $resource('https://api.edamam.com/search?q=radish&app_id=d70e34e6&app_key=b7fd5b2c3b3afdf3a0f82f96f7a91c4d&from=0&to=10&health=vegan', {}, {
+   return $resource('https://api.edamam.com/search?q=:q&app_id=d70e34e6&app_key=b7fd5b2c3b3afdf3a0f82f96f7a91c4d&from=0&to=10&health=vegan', {}, {
       query: {
         method:'GET',
         params:{
