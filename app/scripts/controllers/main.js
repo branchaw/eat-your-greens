@@ -10,4 +10,11 @@
 angular.module('workspaceApp')
   .controller('MainCtrl', function ($scope, search) {
     $scope.search = search.query ();
+  
+    $scope.refreshSearch = function() {
+        $scope.search = search.query({
+            q: $scope.q
+        });
+    };
+  
   });
