@@ -9,14 +9,14 @@
         </p>
         <p>
           <button class="btn btn-lg btn-primary" ng-click="refreshSearch()">Get Recipes</button>
-        </p>      
+        </p>
+  </div>
+  
+   <div>
       <dl ng-repeat="hit in search.hits">
         <dt>Recipe</dt>
         <dd>{{hit.recipe.label}}</dd>
-        <dd>{{hit.recipe.image}}</dd>
-        <dt>Source</dt>
-        <dd>{{hit.recipe.source}}</dd>
-        <dd>{{hit.recipe.url}}</dd>
+        <dd><img ng-src="{{hit.recipe.image}}"</dd>
         <dt>Ingredients</dt>
         <dd>{{hit.recipe.ingredientLines}}</dd>
         <dd>{{hit.recipe.ingredient}}</dd>
@@ -25,7 +25,11 @@
         <dt>Fat</dt>
         <dd>{{hit.recipe.totalNutrients.FAT.quantity}} {{hit.recipe.totalNutrients.FAT.unit}}</dd>
         <dd>{{hit.recipe.dietLabels}}</dd>
+        <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-lg btn-primary">View Recipe on {{hit.recipe.source}}</a></dd>
       </dl>
     </div>
   </p>
 </div>
+
+ <!-- <dt class="list-group">Ingredients</dt>
+        <dd class="list-group-item" ng-repeat="hit in hit.recipe.ingredientLines">{{hit.recipe.ingredientLines}}</dd> -->
