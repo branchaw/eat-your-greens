@@ -1,9 +1,9 @@
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
-  <h1>Search results for</h1>
+  <h1>Eat Your Greens</h1>
   <p class="lead">
    <div ng-init="q='radish'">
-        <p>
-          <label for="q">Ingredient:
+        <p>Satisfy your cravings and green up your diet with plant-based recipes.</p>
+         <p><label for="q">Ingredient:
             <input type="text" name="q" ng-model="q">
           </label>
         </p>
@@ -12,11 +12,18 @@
         </p>
   </div>
   
+  <!-- TODO: Add custon favicon and background img; Style text, buttons, recipe box, imgs, padding bw results; Update footer content. -->
+  
    <div>
       <dl ng-repeat="hit in search.hits">
+       <div class="row">
+         <div class="col-xs-6">                
         <dt>Recipe</dt>
         <dd>{{hit.recipe.label}}</dd>
-        <dd><img ng-src="{{hit.recipe.image}}"</dd>
+        <dd><img class="img-responsive" ng-src="{{hit.recipe.image}}"</dd>
+         </div>
+        
+         <div class="col-xs-6">
         <dt>Ingredients</dt>
         <dd ng-repeat="ingredient in hit.recipe.ingredientLines">{{ingredient}}</dd>
         <dt>Calories</dt>
@@ -25,7 +32,9 @@
         <dd>{{hit.recipe.totalNutrients.FAT.quantity | limitTo: 4}} {{hit.recipe.totalNutrients.FAT.unit}}</dd>
         <dd ng-repeat="diet in hit.recipe.dietLabels">{{diet}}</dd>
         <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-lg btn-primary">View Recipe on {{hit.recipe.source}}</a></dd>
-      </dl>
+         </div>
+       </div>
+     </dl>
     </div>
   </p>
 </div>
