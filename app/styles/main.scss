@@ -12,6 +12,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  background-image: url('../images/radish-2400px.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 19%;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -51,9 +56,16 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(255,255,255, 0.8);
+  color: inherit;
 
-  .btn {
+  .btn-lg {
     font-size: 21px;
+    padding: 14px 24px;
+  }
+  
+  .btn-xs {
+    font-size: 20px;
     padding: 14px 24px;
   }
 }

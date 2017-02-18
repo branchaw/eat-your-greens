@@ -8,11 +8,11 @@
           </label>
         </p>
         <p>
-          <button class="btn btn-lg btn-primary" ng-click="refreshSearch()">Get Recipes</button>
+          <button class="btn btn-lg btn-success" ng-click="refreshSearch()">Get Recipes</button>
         </p>
   </div>
   
-  <!-- TODO: Add custon favicon and background img; Style text, buttons, recipe box, imgs, padding bw results; Update footer content. -->
+  <!-- TODO: Add custon favicon and logo img; Style text, buttons, recipe box, imgs, padding bw results; Update footer content. -->
   
    <div>
       <dl ng-repeat="hit in search.hits">
@@ -31,7 +31,7 @@
         <dt>Fat</dt>
         <dd>{{hit.recipe.totalNutrients.FAT.quantity | limitTo: 4}} {{hit.recipe.totalNutrients.FAT.unit}}</dd>
         <dd ng-repeat="diet in hit.recipe.dietLabels">{{diet}}</dd>
-        <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-lg btn-primary">View Recipe on {{hit.recipe.source}}</a></dd>
+        <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-default btn-sm btn-block">View on {{hit.recipe.source}}</a></dd>
          </div>
        </div>
      </dl>
