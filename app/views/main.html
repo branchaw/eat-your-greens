@@ -2,7 +2,7 @@
   <h1>Eat Your Greens</h1>
   <p class="lead">
    <div ng-init="q='radish'">
-        <p>Satisfy your cravings and green up your diet with plant-based recipes.</p>
+        <p>Satisfy your cravings and green up your diet<br />with plant-based recipes.</p>
          <p><label for="q">Ingredient:
             <input type="text" name="q" ng-model="q">
           </label>
@@ -12,7 +12,7 @@
         </p>
   </div>
   
-  <!-- TODO: Add custon favicon and logo img; Style text, buttons, recipe box, imgs, padding bw results; Update footer content. -->
+  <!-- TODO: Add custon logo img; Style text, buttons, recipe box, imgs. -->
   
    <div>
       <dl ng-repeat="hit in search.hits">
