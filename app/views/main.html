@@ -12,14 +12,14 @@
         </p>
   </div>
   
-  <!-- TODO: Add custon logo img; Style text, buttons, recipe box, imgs. -->
+  <!-- TODO: Style text, buttons, recipe box, imgs. -->
   
    <div>
       <dl ng-repeat="hit in search.hits">
        <div class="row">
          <div class="col-xs-6">                
-        <dt>Recipe</dt>
-        <dd>{{hit.recipe.label}}</dd>
+         <!-- <dt>Recipe</dt> -->
+        <dt id="title">{{hit.recipe.label}}</dt>
         <dd><img class="img-responsive" ng-src="{{hit.recipe.image}}"</dd>
          </div>
         
@@ -30,10 +30,15 @@
         <dd>{{hit.recipe.calories | limitTo: 6}}</dd>
         <dt>Fat</dt>
         <dd>{{hit.recipe.totalNutrients.FAT.quantity | limitTo: 4}} {{hit.recipe.totalNutrients.FAT.unit}}</dd>
-        <dd ng-repeat="diet in hit.recipe.dietLabels">{{diet}}</dd>
-        <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-default btn-sm btn-block">View on {{hit.recipe.source}}</a></dd>
+        <dd ng-repeat="diet in hit.recipe.dietLabels">{{diet}}</dd>        
+        <!-- <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-default btn-sm btn-block">View on {{hit.recipe.source}}</a></dd> -->
          </div>
        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-default btn-sm btn-block">View on {{hit.recipe.source}}</a></dd>
+          </div>
+        </div>
      </dl>
     </div>
   </p>
