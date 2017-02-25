@@ -8,33 +8,36 @@
           </label>
         </p>
         <p>
-          <button class="btn btn-lg btn-success" ng-click="refreshSearch()">Get Recipes</button>
+          <button id="get" class="btn btn-lg btn-success" ng-click="refreshSearch()">Get Recipes</button>
         </p>
   </div>
   
   <!-- TODO: Style text, buttons, recipe box, imgs. -->
   
-   <div>
+   <div id="hits">
       <dl ng-repeat="hit in search.hits">
+        <div id="title" class="row">
+          <div class="col-md-12">          
+            <dt id="label">{{hit.recipe.label}}</dt>
+          </div>
+        </div>
        <div class="row">
          <div class="col-xs-6">                
-         <!-- <dt>Recipe</dt> -->
-        <dt id="title">{{hit.recipe.label}}</dt>
-        <dd><img class="img-responsive" ng-src="{{hit.recipe.image}}"</dd>
+         <!-- <dt>Recipe</dt> 
+        <dt id="title">{{hit.recipe.label}}</dt> -->
+        <dd id="image"><img class="img-responsive" ng-src="{{hit.recipe.image}}"</dd>
          </div>
         
-         <div class="col-xs-6">
-        <dt>Ingredients</dt>
-        <dd ng-repeat="ingredient in hit.recipe.ingredientLines">{{ingredient}}</dd>
-        <dt>Calories</dt>
-        <dd>{{hit.recipe.calories | limitTo: 6}}</dd>
-        <dt>Fat</dt>
-        <dd>{{hit.recipe.totalNutrients.FAT.quantity | limitTo: 4}} {{hit.recipe.totalNutrients.FAT.unit}}</dd>
-        <dd ng-repeat="diet in hit.recipe.dietLabels">{{diet}}</dd>        
+         <div id="ingredients" class="col-xs-6">
+           <dt>Ingredients</dt>
+           <dd ng-repeat="ingredient in hit.recipe.ingredientLines">{{ingredient}}</dd>
+           <dd><strong>Calories:</strong> {{hit.recipe.calories | limitTo: 6}}</dd>
+           <dd><strong>Fat:</strong> {{hit.recipe.totalNutrients.FAT.quantity | limitTo: 4}} {{hit.recipe.totalNutrients.FAT.unit}}</dd>
+           <dd id="diet" ng-repeat="diet in hit.recipe.dietLabels">{{diet}} </dd>        
         <!-- <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-default btn-sm btn-block">View on {{hit.recipe.source}}</a></dd> -->
          </div>
        </div>
-        <div class="row">
+        <div id="viewbtn" class="row">
           <div class="col-md-12">
             <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-default btn-sm btn-block">View on {{hit.recipe.source}}</a></dd>
           </div>
