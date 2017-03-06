@@ -32,6 +32,13 @@ body {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 
+  /* Custon logo img */
+  #logo {
+    height: 100%;
+    margin-top: -3px;
+    margin-right: 5px;
+  }
+  
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
