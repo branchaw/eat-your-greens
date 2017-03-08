@@ -1,6 +1,7 @@
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
   <h1>Eat Your Greens</h1>
   <p class="lead">
+    
    <div ng-init="q='radish'">
         <p>Satisfy your cravings and green up your diet<br />with plant-based recipes.</p>
          <p><label for="q">Ingredient:
@@ -19,11 +20,11 @@
             <dt id="label">{{hit.recipe.label}}</dt>
           </div>
         </div>
+        
        <div class="row">
+         
          <div class="col-xs-6">                
-         <!-- <dt>Recipe</dt> 
-        <dt id="title">{{hit.recipe.label}}</dt> -->
-        <dd id="image"><img class="img-responsive" ng-src="{{hit.recipe.image}}"</dd>
+         <dd id="image"><img class="img-responsive" alt="recipe image" ng-src="{{hit.recipe.image}}"</dd>
          </div>
         
          <div id="ingredients" class="col-xs-6">
@@ -32,15 +33,15 @@
            <dd id="calories"><strong>Calories:</strong> {{hit.recipe.calories | limitTo: 6}}</dd>
            <dd id="fat"><strong>Fat:</strong> {{hit.recipe.totalNutrients.FAT.quantity | limitTo: 4}} {{hit.recipe.totalNutrients.FAT.unit}}</dd>
            <dd id="diet" ng-repeat="diet in hit.recipe.dietLabels">{{diet}} </dd>        
-        <!-- <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-default btn-sm btn-block">View on {{hit.recipe.source}}</a></dd> -->
          </div>
+         
        </div>
         <div id="viewbtn" class="row">
           <div class="col-md-12">
             <dd><a ng-href="{{hit.recipe.url}}" target="_blank" class="btn btn-default btn-sm btn-block">View on {{hit.recipe.source}}</a></dd>
           </div>
         </div>
-     </dl>
+      </dl>
     </div>
   </p>
 </div>

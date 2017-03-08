@@ -37,6 +37,7 @@ body {
     height: 100%;
     margin-top: -3px;
     margin-right: 5px;
+    display: inline-block;
   }
   
   /* Make the masthead heading the same height as the navigation */
@@ -52,7 +53,7 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+ /* border-top: 1px solid #e5e5e5; */
 }
 
 .container-narrow > hr {
@@ -99,16 +100,10 @@ body {
   #fat {
     margin-bottom: 10px;
   }
-  
- // #diet {
-   // margin-right: 5px;
-   // display: inline-block;
- // }
-  
+   
   #viewbtn {
     margin-top: 14px;
-  }
-  
+  }    
 }
 
 /* Supporting marketing content */
